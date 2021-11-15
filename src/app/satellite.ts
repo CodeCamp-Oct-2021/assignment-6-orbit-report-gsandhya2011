@@ -15,8 +15,24 @@ export class Satellite {
    }
 	
 	isSpaceDebris(): boolean {
-		return true;
+		let changeColor = this.type.toLowerCase();
+	   if(changeColor === 'space debris'){
+			return true;
+	   }
+	   return false;
    }
+
+//    shouldShowWarning(): boolean {
+// 	   let changeColor = this.type.toLowerCase();
+// 	   if(changeColor === 'space debris'){
+// 			return true;
+// 	   }
+// 	   return false;
+//    }
+
+   zebraStripe(arr): boolean {
+    return arr.indexOf(this) % 2 === 0 && this.type.toLowerCase() !== 'space debris';
+  }
 
 }
 
